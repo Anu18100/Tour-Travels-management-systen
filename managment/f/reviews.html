@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="review">
+    {% for rev in rev %}
+    <div class="user">
+        <img src="{{ url_for ('static' , filename = 'pp/' +  user.query.get(rev.rver).image_file )}}" alt="">
+        <h3>{{ rev.title }}</h3>
+        <p>By {{ user.query.get(rev.rver).first }} {{ user.query.get(rev.rver).last }}  on {{ rev.date_review.strftime('%d-%m-%Y') }}</p>
+        <p>{{ rev.review }}</p>
+    </div>
+    {% else %}
+    {% endfor %}
+    
+
+</div>
+{% endblock %}

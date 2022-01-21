@@ -1,0 +1,68 @@
+{% extends "layout.html"%}
+{% block content %}
+
+
+        <div class="content-secton">
+            <form class='f1' method="POST" action="">
+               {{ form.hidden_tag() }}
+               <fieldset class="form-group">
+                   <legend class="border-bottom mb-4">Filter The Table </legend>
+                   
+                   <div class="form-group">
+                    {{ form.destiantion.label(class="form-control-label") }}
+                     {{ form.hidden_tag() }}
+
+                    {% if form.destiantion.errors %}
+                         {{ form.destiantion(class="form-control form-control-lg is-invalid")}}
+                             <div class="invalid-feedback">
+                                 {% for error in form.destiantion.errors%}
+                                     <span>{{ error }}</span>
+                                 {% endfor %}
+                             </div>
+                     {% else %}
+                          {{ form.destiantion(class="form-control form-control-lg ") }}
+                     {% endif %}
+
+
+                     
+                </div>
+
+
+                
+               </fieldset>
+             
+               <div>
+                   {{ form.submit }}
+               </div>
+
+
+               <div class="taurtable">
+                   <table>
+                       <tr>
+                           <th>Sr. No.</th>
+                           <th>Traveler</th>
+                           <th>Destination</th>
+                           <th>Date Of Journey</th>
+                           <th>Number Of people</th>
+                           <th>Address</th>
+                           <th>Amout Paid</th>
+                           
+                           
+                       </tr>
+                       {% for tour in tour.query.all() %}
+                       <tr>
+                           <td>{{ loop.index }}</td>
+                           <td>{{ user.query.get(tour.traveler_id).first }} {{ user.query.get(tour.traveler_id).last }}</td>
+                           <td>{{ tour.place }}</td>
+                           <td>{{ tour.doj.strftime('%d-%m-%Y') }}</td>
+                           <td>{{ tour.nop }}</td>
+                           
+                           <td>{{ user.query.get(tour.traveler_id).add1 }} ,{{ user.query.get(tour.traveler_id).add2 }} , {{ user.query.get(tour.traveler_id).add3 }} ,{{ user.query.get(tour.traveler_id).add4 }} , {{ user.query.get(tour.traveler_id).state }} ,{{ user.query.get(tour.traveler_id).city }} </td>
+                           <td>{{ tour.total_amt }}</td>
+
+                       </tr>
+                       {% endfor %}
+                   </table>
+               </div>
+               
+{% endblock %}

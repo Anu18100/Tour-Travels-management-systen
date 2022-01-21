@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+{% block content %}
+        <div class="content-secton">
+            <form class='f1' method="POST" action="">
+               {{ form.hidden_tag() }}
+               <fieldset class="form-group">
+                   <legend class="border-bottom mb-4">Plan Your Trip Today </legend>
+                   <div class="form-group">
+                       {{ form.place.label(class="form-control-label") }}
+
+                       {% if form.place.errors %}
+                            {{ form.place(class="form-control form-control-lg is-invalid")}}
+                                <div class="invalid-feedback">
+                                    {% for error in form.place.errors%}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                        {% else %}
+                             {{ form.place(class="form-control form-control-lg")}}
+                        {% endif %}
+                   </div>
+                   
+               
+                  
+               
+                   
+
+                   <div class="form-group">
+                    {{ form.doj.label(class="form-control-label") }}
+                     {{ form.hidden_tag() }}
+
+                    {% if form.doj.errors %}
+                         {{ form.doj(class="form-control form-control-lg is-invalid")}}
+                             <div class="invalid-feedback">
+                                 {% for error in form.doj.errors%}
+                                     <span>{{ error }}</span>
+                                 {% endfor %}
+                             </div>
+                     {% else %}
+                          {{ form.doj(class="form-control form-control-lg") }}
+                     {% endif %}
+                </div>
+
+                
+                <div class="form-group">
+                    {{ form.nop.label(class="form-control-label") }}
+
+                    {% if form.nop.errors %}
+                         {{ form.nop(class="form-control form-control-lg is-invalid")}}
+                             <div class="invalid-feedback">
+                                 {% for error in form.nop.errors%}
+                                     <span>{{ error }}</span>
+                                 {% endfor %}
+                             </div>
+                     {% else %}
+                          {{ form.nop(class="form-control form-control-lg")}}
+                     {% endif %}
+                </div>
+
+
+                <div class="form-group">
+                    {{ form.package_amt.label(class="form-control-label") }}
+                     {{ form.hidden_tag() }}
+
+                    {% if form.package_amt.errors %}
+                         {{ form.package_amt(class="form-control form-control-lg is-invalid")}}
+                             <div class="invalid-feedback">
+                                 {% for error in form.package_amt.errors%}
+                                     <span>{{ error }}</span>
+                                 {% endfor %}
+                             </div>
+                     {% else %}
+                          {{ form.package_amt(class='form-control form-control-lg') }}
+                     {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.total_amt.label(class="form-control-label") }}
+
+                    {% if form.total_amt.errors %}
+                         {{ form.total_amt(class="form-control form-control-lg is-invalid")}}
+                             <div class="invalid-feedback">
+                                 {% for error in form.total_amt.errors%}
+                                     <span>{{ error }}</span>
+                                 {% endfor %}
+                             </div>
+                     {% else %}
+                          {{ form.total_amt(class="form-control form-control-lg")}}
+                     {% endif %}
+                </div>
+
+
+
+               </fieldset>
+
+               <div>
+                   {{ form.submit}}
+               </div>
+            </form>
+        </div>
+{% endblock content %}

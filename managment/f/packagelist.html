@@ -1,0 +1,58 @@
+{% extends "layout.html"%}
+{% block content %}
+               <div class="bustable">
+                <table>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Destination</th>
+                        <th>Dueration</th>
+                        <th>Amount</th>
+                    </tr>
+                    {% for pk in pk.query.all()%}
+                    <tr>
+                        <td><a href="{{ url_for('ptour' , pid = pk.packages_id)}}">{{ pk.packages_id }}</a></td>
+                        <td>{{ pk.destination }}</td>
+                        <td>{{ pk.duration }}</td>
+                        <td>{{ pk.amt }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+
+            {% if current_user.is_authenticated %}
+
+            <br>
+            <br>
+            <br>
+            <h3 class="table_hedding">Your Planned Tours Are:-</h3>
+            <div class="taurtable">
+                <table>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Traveler</th>
+                        <th>Destination</th>
+                        <th>Date Of Journey</th>
+                        <th>Number Of people</th>
+                        <th>Amout Paid</th>
+                        <th>Delete</th>
+                        
+                    </tr>
+                    
+                        {% for tour in tour.query.filter_by(traveler_id = current_user.id) %}
+                    
+                        <tr>
+                            <td><a href="{{ url_for('tupdate' , pid = tour.id)}}">{{ loop.index }}</a></td>
+                            <td>{{ current_user.first }} {{ current_user.last }}</td>
+                            <td>{{ tour.place }}</td>
+                            <td>{{ tour.doj.strftime('%d-%m-%Y') }}</td>
+                            <td>{{ tour.nop }}</td>
+                            <td>{{ tour.total_amt }}</td>
+                            <td><a href="{{ url_for('tdelete' , pid = tour.id)}}"><input type="button" class="btn btn-danger" value="Delete"></a></td>
+                        </tr>
+                        
+                        {% endfor %}
+                    
+                </table>
+            </div>
+            {% endif %}
+{% endblock %}

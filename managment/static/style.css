@@ -1,0 +1,448 @@
+                        /*css for home page*/
+                        html,
+                        
+                        body{
+                            height: 100%;
+                            margin: 0;
+                            padding: 0;
+                           
+                        }
+
+
+                        .form-group {
+                            padding-bottom: 2%;
+                        }
+
+
+                        tbody, td, tfoot, th, thead, tr {
+                            border-color: darkturquoise;
+                            border-style: solid;
+                            border-width: 3px;
+                            padding: 1%;
+                        }
+
+                        tbody {
+                            display: table-row-group;
+                            vertical-align: middle;
+                            border-color: inherit;
+                            border-style: inset;
+                            border-width: 3px;
+                            padding: 1%;
+                        }
+
+                        .table_heading{
+                            position: relative;
+                            top: 10%;
+
+                        }
+                        table {
+                            caption-side: bottom;
+                            border-collapse: revert;
+                            padding: 10%;
+                        }
+
+                        .col-md-3 img {
+                            border-radius: 25%;
+                        }
+
+                        .fixed-top {
+                            position: fixed;
+                            height: 12.5%;
+                            top: 0;
+                            right: 0;
+                            left: 0;
+                            display: table-caption;
+                            z-index: 1030;
+                            background-color: lightseagreen;
+                        }
+
+                        .site-header h1 {
+                            font-family: fantasy;
+                        }
+
+                        .navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+                            display: inline-table;
+                            flex-wrap: inherit;
+                            align-items: center;
+                            justify-content: space-between;
+                        }
+
+
+                        span.a {
+                            color: aliceblue;
+                            padding-left: 4%;
+                        }
+
+                        span.b {
+                            color: brown;
+                        }
+
+                        span.c {
+                            color: darkslateblue;
+                        }
+                        
+                        a.navbar-barand.mr-4 {
+                            padding-right: 6%;
+                        }
+                        
+                        a {
+                            color: black;
+                            text-decoration: wavy;
+                        }
+
+                        .row{
+                            padding-top: 10%;
+                        }
+
+                        .collapse:not(.show) {
+                            display: table-cell;
+                            text-align: -webkit-right;
+                        }
+
+                        .me-auto {
+                            margin-right: auto!important;
+                        }
+
+                        .navbar-nav {
+                            display: table-cell;
+                            flex-direction: column;
+                            padding-left: 0;
+                            margin-bottom: 0;
+                            list-style: none;
+                        }
+
+
+                        .navbar-nav .nav-link {
+                            padding-right: 0;
+                            padding-left: 20px;
+                        }
+                        
+                        .nav-link {
+                            display: table-cell;
+                            padding: 0;
+                            text-decoration: wavy;
+                            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+                        }
+
+                        ul {
+                            list-style-type: none;
+                        }
+                        
+                        .non_body{
+                            min-height: 100%;
+                            position: relative;
+                        }
+                        
+                        .non_body a:hover{
+                            color: rgb(89, 14, 187);
+                        }
+                        
+                        .site-header{
+                        width: 100%;
+                        display: block;}
+                        
+                        .inner_head{
+                        height: 100%;
+                        width: 1000px;
+                        display: block;
+                        margin: 0 auto;
+                        float: left;
+                        }
+                        
+                        .inner_head h1{
+                            height: 100%;
+                            display: inline-block;
+                            vertical-align: middle;
+                            margin-top: 0px;
+                        
+                        }
+                        
+                        .inner_head img{
+                            height: 80px;
+                            width: 100px;
+                        }
+                        
+                        .nevigation{
+                            height: 100%;
+                            float: right;
+                            vertical-align: middle;
+                        }
+                        
+                        .nevigation a{
+                            display: table;
+                            height: 100%;
+                            float: left;
+                            margin: 20px;
+                        }
+                        
+                        .slidshow {
+                            border-radius: 20px;
+                            border: 3px solid darkturquoise;
+                            width: 105%;
+                            height: 16%;
+                            overflow: hidden;
+                        }
+
+                        .middel {
+                            position: relative;
+                        }
+
+                        .col-md-9 {
+                            flex: 0 0 auto;
+                            width: 75%;
+                            padding: 0%;
+                            padding-right: 5%;
+                        }
+
+                        .col-md-11 {
+                            flex: 0 0 auto;
+                            width: 100%;
+                            padding: 0%;
+                            padding-right: 5%;
+                        }
+
+                        .col-md-3 {
+                            flex: 0 0 auto;
+                            width: 25%;
+                            padding-left: 0px;
+                            align-items: center;
+                            text-align: center;
+                            border: solid darkturquoise;
+                            height: 20%;
+                            border-radius: 20px;
+                            background: darkturquoise;
+                        }
+
+                        .marquee1 {
+                            background: lightseagreen;
+                            width: 106%;
+                            border-radius: 5%;
+                        }
+
+
+                        .marquee1 ul{
+                            list-style-type: square;
+                        }
+
+
+
+                        .nevi {
+                            position: absolute;
+                            left: 40%;
+                            bottom: 34%;
+                            transform: translateX(-50%);
+                            display: none;
+                        }
+                        
+                        .bar{
+                            width: 10px;
+                            height: 10px;
+                            border-radius:50px ;
+                            border: 2px solid white;
+                            margin: 6px;
+                            cursor: pointer;
+                            transform : 1s;
+                        }
+                        .bar:hover{
+                            background:rgb(89, 14, 187);
+                        }
+                        input[name="r"]{
+                            position: absolute;
+                            visibility: hidden;
+                        }
+                        
+                        .slides{
+                            width: 500%;
+                            height: 100%;
+                            display: flex;
+                        }
+                        
+                        .images{
+                        width: 20%;
+                        transition: 0.6s;
+                        }
+                        
+                        .images img{
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 10px;
+                        }
+                        
+                        #r1:checked ~ .s1{
+                            margin-left: 0%;
+                        }
+                        #r2:checked ~ .s1{
+                            margin-left: -20%;
+                        }
+                        #r3:checked ~ .s1{
+                            margin-left: -40%;
+                        }
+                        #r4:checked ~ .s1{
+                            margin-left: -60%;
+                        }
+                        #r5:checked ~ .s1{
+                            margin-left: -80%;
+                        }
+                        
+                        
+                        .about{
+                        background: rgb(89, 14, 187);
+                        width: 100%;
+                        height: 200px;
+                        top: 130%;
+                        bottom:  0px;
+                        left: 0px;
+                        
+                        position: relative;
+                        display: table;
+                        }
+                        
+                        
+                        
+                        .review {
+                            width: 100%;
+                            position: relative;
+                            display: block;
+                            top: 10%;
+                            padding-left: 10%;
+                            padding-bottom: 10%;
+                        }
+
+                        
+                        .review .user {
+                            border-radius: 20px;
+                            background: darkturquoise;
+                            width: 100%;
+                            height: 100%;
+                            padding-left: 10%;
+                            padding-top: 3%;
+                        }
+                        
+                        .user img {
+                            top: 15%;
+                            height: 9%;
+                            width: 13%;
+                            position: relative;
+                            border-radius: 50px;
+                        }
+                        
+                        .user h3 {
+                            PADDING: 0;
+                        }
+                        
+                        .user span{
+                            padding-right: 15%;
+                            left: 10%;
+                            position: relative;
+                        }
+                        
+                        
+                        .tp {
+                            position: relative;
+                            top: 40%;
+                            left: 46%;
+                        }
+                        
+                        .tp1 {
+                            position: relative;
+                            top: 1%;
+                            text-align: center;
+                            left: 5%;
+                        }
+                        
+                        marquee{
+                            font-style: blink;
+                        }
+                        
+                        
+                        .Packages {
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-between;
+                            padding-top: 8%;
+                            padding-left: 10%;
+                            text-align: center;
+                        }
+                        
+                        
+                        
+                        
+                        .pi img {
+                            border-radius: 10px;
+                            width: 54%;
+                        }
+                        
+                        
+                        .pi {
+                            top: 10%;
+                            left: 0%;
+                            position: relative;
+                        }
+                        
+                        .text{
+                            display: flex;
+                        }
+                        
+                        .text p {
+                            left: 4px;
+                            position: relative;
+                            padding-top: 17%;
+                        }
+                        
+                        .text b {
+                            left: -3%;
+                            padding-top: 17%;
+                            position: relative;
+                        }
+                        
+                        
+                        .place {
+                            height: 300px;
+                            border-radius: 20px;
+                            background: darkturquoise;
+                            width: 30%;
+                        }
+                        
+                        
+                        
+                        
+                        
+                        
+                                                    /*css for login page*/
+                        
+                        
+                        
+                        
+                        
+                                            
+                            /*Css for registration Page*/
+                        
+                        .regi{
+                            border-radius: 50px;
+                            background: rgb(89, 14, 187);
+                            display: table;
+                            position: absolute;
+                            top: 23%;
+                            bottom: 50%;
+                            left: 35%;
+                            width: 500px;
+                            height: 500px;
+                        }
+                        
+                        .regi form{
+                            color:black;
+                            left:145px;
+                            top:30px;
+                            position:absolute
+                        }
+                        
+                        .form_field{
+                            width:20%;
+                        }
+                        
+                        .about1{
+                            background: rgb(89, 14, 187);
+                            width: 100%;
+                            position: absolute;
+                            display: table;
+                        }

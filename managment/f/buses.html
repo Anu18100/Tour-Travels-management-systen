@@ -1,0 +1,97 @@
+{% extends "layout.html"%}
+{% block content %}
+
+
+        <div class="content-secton">
+            <form class='f1' method="POST" action="">
+               {{ form.hidden_tag() }}
+               <fieldset class="form-group">
+                   <legend class="border-bottom mb-4">Add Buses Here </legend>
+                   <div class="form-group">
+                       {{ form.driver_name.label(class="form-control-label") }}
+
+                       {% if form.driver_name.errors %}
+                            {{ form.driver_name(class="form-control form-control-lg is-invalid")}}
+                                <div class="invalid-feedback">
+                                    {% for error in form.driver_name.errors%}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                        {% else %}
+                             {{ form.driver_name(class="form-control form-control-lg")}}
+                        {% endif %}
+                   </div>
+                   
+               
+                  
+               
+                   
+
+                   <div class="form-group">
+                    {{ form.contact.label(class="form-control-label") }}
+                     {{ form.hidden_tag() }}
+
+                    {% if form.contact.errors %}
+                         {{ form.contact(class="form-control form-control-lg is-invalid")}}
+                             <div class="invalid-feedback">
+                                 {% for error in form.contact.errors%}
+                                     <span>{{ error }}</span>
+                                 {% endfor %}
+                             </div>
+                     {% else %}
+                          {{ form.contact(class="form-control form-control-lg") }}
+                     {% endif %}
+                </div>
+
+                
+                <div class="form-group">
+                    {{ form.status.label(class="form-control-label") }}
+
+                    {% if form.status.errors %}
+                         {{ form.status(class="form-control form-control-lg is-invalid")}}
+                             <div class="invalid-feedback">
+                                 {% for error in form.status.errors%}
+                                     <span>{{ error }}</span>
+                                 {% endfor %}
+                             </div>
+                     {% else %}
+                          {{ form.status(class="form-control form-control-lg")}}
+                     {% endif %}
+                </div>
+                
+
+
+                
+
+
+               </fieldset>
+
+               <div>
+                   {{ form.submit}}
+               </div>
+
+               {% if pid %}
+               {% else %}
+               <div class="bustable">
+                <table>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Driver Name</th>
+                        <th>Contact No</th>
+                        <th>Status</th>
+                        <th>Delete</th>
+                    </tr>
+                    {% for bus in bus%}
+                    <tr>
+                        <td><a href="{{ url_for('ubus' , pid = bus.id)}}">{{ loop.index }}</a></td>
+                        
+                        <td>{{ bus.driver_name }}</td>
+                        <td>{{ bus.contact }}</td>
+                        <td>{{ bus.status }}</td>
+                        <td><a href="{{ url_for('bdelete' , pid = bus.id)}}"><input type="button" class="btn btn-danger" value="Delete"></a></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            {% endif %}
+{% endblock %}

@@ -1,0 +1,189 @@
+
+{% if current_user.is_authenticated %} 
+    {% extends "home_for_user.html" %}
+{% else %}
+    {% extends "layout.html" %}
+{% endif %}
+
+{% block content %}
+
+   
+
+    <div class="slidshow middel">
+        <div class="slides">
+
+            <input type="radio" name="r" id="r1" checked>
+            <input type="radio" name="r" id="r2">
+            <input type="radio" name="r" id="r3">
+            <input type="radio" name="r" id="r4">
+            <input type="radio" name="r" id="r5">
+
+            <div class="images s1">
+                <img src="{{  url_for('static', filename = '1.jpg') }}" alt="image brower not supported">
+            </div>  
+            <div class="images">
+                <img src="{{  url_for('static', filename = '2.jpg') }}"" alt="image brower not supported">
+            </div>  
+            <div class="images">
+                <img src="{{  url_for('static', filename = '3.jpg') }}" alt="image brower not supported">
+            </div>  
+            <div class="images">
+                <img src="{{  url_for('static', filename = '4.jpg') }}" alt="image brower not supported">
+            </div>
+            <div class="images">
+                <img src="{{  url_for('static', filename = '5.jpg') }}" alt="image brower not supported">
+            </div>    
+            
+
+            <div class="nevi">
+                <label for="r1" class="bar"></label>
+                <label for="r2" class="bar"></label>
+                <label for="r3" class="bar"></label>
+                <label for="r4" class="bar"></label>
+                <label for="r5" class="bar"></label>
+            </div>
+
+            <script type = "text/javascript">
+            var c = 1;
+            setInterval(function()
+            {
+                document.getElementById('r' + c).checked = true;
+                c++;
+                if(c>4){
+                    c = 1;
+                }
+                
+            } , 4000)
+            </script>
+            
+           
+        </div>
+
+    </div>
+
+    <div class="tp"><h2>Reviews</h2></div>
+
+    <div class="tp1"><h2>Packages</h2></div>
+
+
+
+    <div class="Packages">
+        <div class="place">
+            <div class="pi">
+                <h4>&emsp;Darjeeling</h4>
+            <img src="{{  url_for('static', filename = '4.jpg') }}" alt="Kashi">
+            </div>
+
+            <div class="text">
+                <p>Amount Per Person : <br><br>
+                Duration &emsp;&emsp;&emsp;&emsp;&nbsp;: <br>
+                </p>
+                <b>15000 INR <br><br>
+                    4 Nights Stay</b>
+            </div>
+        </div> 
+
+
+        <div class="place">
+            <div class="pi">
+                <h4>&emsp;Kashi </h4>
+                <img src="{{  url_for('static', filename = '1.jpg') }}" alt="Kashi">
+            </div>
+
+            <div class="text">
+            
+                <p>Amount Per Person : <br><br>
+                Duration &emsp;&emsp;&emsp;&emsp;&nbsp;: <br>
+                </p>
+                <b>50000 INR <br><br>
+                    4 Nights Stay</b>
+            </div>
+        </div>
+        
+        <div class="place">
+            <div class="pi">
+                <h4>&emsp;France </h4>
+                <img src="{{  url_for('static', filename = '5.jpg') }}" alt="Kashi">
+            </div>
+
+            <div class="text">
+            
+                <p>Amount Per Person : <br><br>
+                Duration &emsp;&emsp;&emsp;&emsp;&nbsp;: <br>
+                </p>
+                <b>85000 INR <br><br>
+                    7 Nights Stay</b>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="Packages">
+        <div class="place">
+            <div class="pi">
+                <h4>&emsp;Jammu </h4>
+            <img src="{{  url_for('static', filename = '2.jpg') }}" alt="Kashi">
+            </div>
+
+            <div class="text">
+                <p>Amount Per Person : <br><br>
+                Duration &emsp;&emsp;&emsp;&emsp;&nbsp;: <br>
+                </p>
+                <b>30000 INR <br><br>
+                    4 Nights Stay</b>
+            </div>
+        </div> 
+
+
+
+        <div class="place">
+            <div class="pi">
+                <h4>&emsp;Mumbai </h4>
+                <img src="{{  url_for('static', filename = '3.jpg') }}" alt="Kashi">
+            </div>
+
+            <div class="text">
+            
+                <p>Amount Per Person : <br><br>
+                Duration &emsp;&emsp;&emsp;&emsp;&nbsp;: <br>
+                </p>
+                <b>15000 INR <br><br>
+                    4 Nights Stay</b>
+            </div>
+        </div> 
+
+
+        <div class="place">
+            <div class="pi">
+                <h4>&emsp;Delhi </h4>
+                <img src="{{  url_for('static', filename = '6jpg.jpg') }}" alt="Kashi">
+            </div>
+
+            <div class="text">
+            
+                <p>Amount Per Person : <br><br>
+                Duration &emsp;&emsp;&emsp;&emsp;&nbsp;: <br>
+                </p>
+                <b>25000 INR <br><br>
+                    3 Nights Stay</b>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="review">
+                {% for rev in rev %}
+                {% if rev.id <= 3 %}
+                <div class="user">
+                    <img src="{{ url_for ('static' , filename = 'pp/' +  user.query.get(rev.rver).image_file )}}" alt="">
+                    <h3>{{ rev.title }}</h3>
+                    <p>By {{ user.query.get(rev.rver).first }} {{ user.query.get(rev.rver).last }}  on {{ rev.date_review.strftime('%d-%m-%Y') }}</p>
+                    <p>{{ rev.review }}</p>
+                </div>
+                {% else %}
+                {% endif %}
+                {% endfor %}
+                
+            
+    </div>
+{% endblock %}
